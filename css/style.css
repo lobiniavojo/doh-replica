@@ -1,0 +1,417 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    width: 100%;
+    background: linear-gradient(90deg, #90EE90, #FFFFFF); /* Light green to white gradient */
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+header .title h1 {
+    color: #043927;
+}
+
+.blank {
+    height: 10px;
+    padding-left: 800px;
+    padding-right: 800px;
+    background-color: #00A86B;
+}
+
+
+
+header .logo-title {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space out left and right images */
+    width: 100%; /* Ensure it spans the entire width */
+    max-width: 1200px; /* Optional: To limit the max width */
+    padding: 0 20px; /* Add padding to the sides */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+header .logo-title .left-images,
+header .logo-title .right-images {
+    display: flex;
+    flex-direction: row; /* Align images side by side */
+    align-items: center; /* Center images vertically within their container */
+    justify-content: center; /* Center images in their container */
+}
+
+header .logo-title img {
+    height: 120px; /* Height for logo and other images */
+    margin: 10px; /* Remove margin to lessen space between images */
+    padding: 0; /* Ensure no padding is affecting layout */
+}
+
+/* Additional padding could be added to header if needed, e.g., */
+header .logo-title .left-images img:first-child {
+    padding-right: 2px; /* Optional: small padding between first and second image */
+}
+
+header .logo-title .right-images img:first-child {
+    padding-right: 2px; /* Optional: small padding between first and second image */
+}
+
+header .logo-title .title {
+    display: flex;
+    flex-direction: column; /* Stack title elements vertically */
+    align-items: center; /* Center title text */
+}
+
+header .logo-title .title h1 {
+    font-size: 1.8rem;
+    margin: 0px 0;
+    font-weight: 700; /* Use numeric value for bold */
+}
+
+
+header .logo-title .title h2 {
+    font-size: 1.2rem;
+    margin: 0px 0;
+    font-weight: normal;
+}
+
+header .logo-title .title h3 {
+    font-size: 20px;
+    margin: 0px 0;
+    font-weight: normal;
+    font-style: italic; /* Make the text italic */
+}
+
+.main-navigation {
+    background-color: #175d3d;
+    padding-left: 500px;
+    padding-right: 500px;
+}
+
+
+
+
+/* Default styles */
+header nav {
+    display: flex; /* Show navigation menu by default */
+}
+
+/* Hide the menu button on desktop */
+.menu-button {
+    display: none; /* Initially hidden */
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    header nav {
+        display: none; /* Hide the nav in mobile view */
+    }
+    
+    .menu-button {
+        display: block; /* Show menu button in mobile view */
+        background-color: #28a745; /* Button color */
+        color: #fff; /* Button text color */
+        border: none; /* Remove border */
+        padding: 10px 15px; /* Button padding */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Change cursor on hover */
+        font-size: 1rem; /* Font size */
+    }
+}
+
+/* Show the navigation menu when 'show' class is added */
+.show {
+    display: flex; /* Show the menu in flex layout */
+    flex-direction: column; /* Stack the items vertically */
+    align-items: center; /* Center items */
+    padding: 10px; /* Padding for the menu */
+}
+
+
+
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.hero {
+    color: white;
+    min-height: 80vh; /* Adjust height to 80% of the viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 0; /* Add padding instead of full-height */
+}
+
+
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    margin: 10px 0;
+}
+
+.carousel {
+    position: relative;
+    max-width: 1000px;
+    margin-top: 10px;
+
+    overflow: hidden;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth slide transition */
+}
+
+.slide {
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dot {
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+.dot:hover {
+    background-color: #555;
+} 
+
+.diseases-section {
+    padding: 50px 0;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  
+  .disease-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .disease-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .disease-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .disease-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .disease-card h3 {
+    font-size: 1.2em;
+    margin: 15px 0;
+  }
+  
+  .disease-card p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .disease-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .disease-card a:hover {
+    background-color: #0056b3;
+  }
+  
+
+.cta-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Main content section */
+.main-content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.news-grid article {
+    background-color: #f4f4f4;
+    padding: 20px;
+    flex: 1;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-grid h3 {
+    margin-bottom: 10px;
+}
+
+/* Parallax Section */
+.parallax {
+    /* Set the background image */
+    background-image: url('../images/mission-img.webp'); /* Replace with your image */
+    height: 400px; /* Height of the parallax section */
+    background-attachment: fixed; /* Enable the parallax effect */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Cover the entire section */
+    display: flex; /* Center the content */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Align items horizontally */
+    color: white; /* Text color */
+    text-align: center; /* Center text */
+}
+
+.parallax-content {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px; /* Padding for content */
+    border-radius: 5px; /* Rounded corners */
+}
+
+
+/* Footer */
+footer {
+    background-color: #006400;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+
+
+
+/* Responsive design */
+@media (max-width: 600px) {
+    header .logo-title {
+        flex-direction: column; /* Stack everything on small screens */
+        align-items: center; /* Center all elements */
+    }
+
+    header .logo-title .left-images,
+    header .logo-title .right-images {
+        flex-direction: row; /* Maintain horizontal alignment */
+    }
+}
+
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        height: 300px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+}
