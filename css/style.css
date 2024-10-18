@@ -26,11 +26,13 @@ header .title h1 {
 }
 
 .blank {
-    height: 10px;
-    padding-left: 800px;
-    padding-right: 800px;
-    background-color: #00A86B;
+    height: 10px;               /* Height of the div */
+    background-color: #00A86B; /* Color of the div */
+    width: 100%;                /* Make the div take the full width of its parent */
+    position: relative;         /* Position it relative to the header */
+    margin-top: 10px;          /* Optional: Add some space above the blank div */
 }
+
 
 
 
@@ -97,8 +99,7 @@ header .logo-title .title h3 {
 
 .main-navigation {
     background-color: #175d3d;
-    padding-left: 500px;
-    padding-right: 500px;
+    width: 100%;
 }
 
 
